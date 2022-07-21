@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>알라딘</title> 
+  <link rel="stylesheet" type="text/css" href="css/index.css">
+  <link rel="stylesheet" type="text/css" href="css/jquery.bxslider.css">
+  <script type="text/javascript" src="http://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script type="text/javascript">
+  
+  /*GNB*/
+  $(document).ready(function(){
+    var ckNum = 0;
+    $(".gnb h2").click(function(){
+      if(ckNum == 0){
+        $(".gnb").css({position:"fixed", width:"100%", zIndex:1000});
+        $(".gnb > ul").css({display:"block"});
+        ckNum = 1;
+      } else{
+        $(".gnb").css({position:"absolute", width:"0", zIndex:1});
+        $(".gnb > ul").css({display:"none"});
+        $(".gnb ul ul").stop().slideUp("fast");
+        ckNum = 0;
+      };
+    });
+
+    $(".gnb > ul > li").click(function(){
+      $(".gnb ul ul").not($(this).find("ul")).stop().slideUp("fast");
+      $(this).find("ul").slideToggle("fast");
+    });
+
+    $('.gallery').bxSlider({
+      mode:"fade",
+      auto:true,
+      controls:false
+    });
+
+    /* 1. 새로 나온 책 */
+    $('.new_book ul').bxSlider({
+      slideMargin: 15,
+      autoHover: true,
+      touchEnabled: true,
+      controls:false
+    });
+
+    /* 2. 실시간 클릭 + 태그 */
+    $('.click ul').bxSlider({
+      slideMargin: 15,
+      autoHover: true,
+      touchEnabled: true,
+      controls:false
+    });
+
+    $('.tag').bxSlider({
+      slideMargin: 15,
+      autoHover: true,
+      touchEnabled: true,
+      controls:false,
+      pager:false
+    });
+
+    /* 4. 베스트셀러 */
+    $('.best_book ul').bxSlider({
+      slideMargin: 15,
+      autoHover: true,
+      touchEnabled: true,
+      controls:false
+    });
+
+    /* 5. 알라딘 굿즈/사은품 */
+    $('.goods ul').bxSlider({
+      mode: 'horizontal',
+      slideMargin: 15,
+      autoHover: true,
+      touchEnabled: true,
+      controls:false,
+      minSlides:true
+    });
+
+    /* 6. 카드리뷰 */
+    $('.card_review ul').bxSlider({
+      slideMargin: 15,
+      autoHover: true,
+      controls:false,
+      touchEnabled: true,
+    });
+});    
+  </script>
+  <script type="text/javascript" src="js/jquery.bxslider.js"></script>
+</head>
+
+<body>
+  <header id="header" class="header">
+    <h1 class="logo"><a href="#">TITLE</a></h1>
+
+    <nav class="gnb">
+      <h2><a href="#">알라딘</a></h2>
+      <ul>
+        <li class="menu1"><a href="#">국내도서</a>
+          <ul>
+            <li><a href="#">가정/요리/뷰티</a></li>
+            <li><a href="#">건강/취미/레저</a></li>
+            <li><a href="#">경제경영</a></li>
+            <li><a href="#">고전</a></li>
+            <li><a href="#">과학</a></li>
+            <li><a href="#">소설/시/희곡</a></li>
+            <li><a href="#">에세이</a></li>                
+            <li><a href="#">여행</a></li>
+            <li><a href="#">역사</a></li>
+            <li><a href="#">예술/대중문화</a></li>
+            <li><a href="#">외국어</a></li>
+            <li><a href="#">인문학</a></li>
+            <li><a href="#">자기계발</a></li>
+            <li><a href="#">컴퓨터/모바일</a></li>
+            <li><a href="#">수험서/자격증</a></li>
+            <li><a href="#">공무원 수험서</a></li>
+            <li><a href="#">어린이/유아</a></li>
+            <li><a href="#">좋은부모</a></li>
+            <li><a href="#">청소년</a></li>
+            <li><a href="#">참고서</a></li>
+          </ul>
+        </li>
+
+        <li class="menu2"><a href="#">외국도서</a>
+          <ul>
+            <li><a href="#">어린이</a></li>
+            <li><a href="#">청소년</a></li>
+            <li><a href="#">영미도서</a></li>
+            <li><a href="#">ELT/어학/사전</a></li>
+            <li><a href="#">소설/시/희곡</a></li>
+            <li><a href="#">인문/사회</a></li>
+            <li><a href="#">경제경영</a></li>
+            <li><a href="#">자기계발</a></li>
+            <li><a href="#">자연과학</a></li>
+            <li><a href="#">예술/대중문화</a></li>
+            <li><a href="#">컴퓨터</a></li>
+            <li><a href="#">가정/원예/인테리어</a></li>
+            <li><a href="#">공예/취미/수집</a></li>
+            <li><a href="#">여행</a></li>
+            <li><a href="#">건강/스포츠</a></li>
+            <li><a href="#">일본도서</a></li>
+            <li><a href="#">중국도서</a></li>
+            <li><a href="#">제2외국어/이중언어</a></li>
+            <li><a href="#">기타언어권</a></li>
+          </ul>
+        </li>
+
+        <li class="menu3"><a href="#">eBook</a>
+          <ul>
+            <li><a href="#">로맨스</a></li>
+            <li><a href="#">판타지</a></li>
+            <li><a href="#">무협</a></li>
+            <li><a href="#">BL</a></li>
+            <li><a href="#">라이트노벨</a></li>
+            <li><a href="#">만화</a></li>
+            <li><a href="#">어린이</a></li>
+            <li><a href="#">청소년</a></li>
+            <li><a href="#">좋은부모</a></li>
+            <li><a href="#">에세이</a></li>
+            <li><a href="#">소설/시</a></li>
+            <li><a href="#">자기계발</a></li>
+            <li><a href="#">경제경영</a></li>
+            <li><a href="#">사회과학</a></li>
+            <li><a href="#">인문학</a></li>
+            <li><a href="#">가정/요리/뷰티</a></li>
+            <li><a href="#">건강/취미/레저</a></li>
+          </ul>
+        </li>
+
+        <li class="menu4"><a href="#">온오프라인 중고샵</a>
+          <ul>
+            <li><a href="#">온라인 중고매장 이 광활한 우주점</a></li>
+            <li><a href="#">오프라인 중고매장 찾기</a></li>
+            <li><a href="#">중고 국내도서</a></li>
+            <li><a href="#">중고 외국도서</a></li>
+            <li><a href="#">중고 음반</a></li>
+            <li><a href="#">중고 DVD/블루레이</a></li>
+            <li><a href="#">알라딘에 중고팔기</a></li>
+            <li><a href="#">판매가능여부&판매가격 확인하기</a></li>
+            <li><a href="#">중고샵&중고매장 FAQ</a></li>       
+          </ul>
+        </li>
+
+        <li class="menu5"><a href="#">알라딘 굿즈</a>
+          <ul>
+            <li><a href="#">문구</a></li>
+            <li><a href="#">독서용품</a></li>
+            <li><a href="#">데스크용품</a></li>
+            <li><a href="#">디지털</a></li>
+            <li><a href="#">가방/파우치</a></li>
+            <li><a href="#">생활용품</a></li>
+            <li><a href="#">리빙/키친</a></li>
+            <li><a href="#">의류/잡화</a></li>
+          </ul>
+        </li>
+
+        <li class="menu6"><a href="#">음반</a>
+          <ul>
+            <li><a href="#">가요</a></li>
+            <li><a href="#">클래식</a></li>
+            <li><a href="#">팝</a></li>
+            <li><a href="#">재즈</a></li>
+            <li><a href="#">국악</a></li>
+            <li><a href="#">월드뮤직</a></li>
+            <li><a href="#">종교/명상/기타</a></li>
+            <li><a href="#">J-POP</a></li>
+            <li><a href="#">OST</a></li>
+            <li><a href="#">LP</a></li>
+          </ul>
+        </li>
+
+        <li class="menu7"><a href="#">블루레이</a>
+          <ul>
+            <li><a href="#">드라마/코미디</a></li>
+            <li><a href="#">TV시리즈</a></li>
+            <li><a href="#">액션/어드벤쳐</a></li>
+            <li><a href="#">S.F./판타지</a></li>
+            <li><a href="#">공포/스릴러</a></li>
+            <li><a href="#">애니메이션</a></li>
+            <li><a href="#">음악DVD</a></li>
+            <li><a href="#">블루레이</a></li>
+          </ul>
+        </li>
+      </ul>
+    </nav>
+
+    <div class="top_menu">
+      <h2 class="hide">TITLE</h2>            
+        <ul>
+          <li class="login"><a href="#">TEXT</a></li>
+        </ul>  
+    </div>
+  </header>
+
+  <main id="content" class="content">
+    <section class="main_image">
+      <h2 class="hide">메인 이미지</h2>
+      <div class="main_wrap">
+          <ul class="gallery">           
+            <li class="main_image1"><a href=#><img src="images/main_image1.jpg" alt="TEXT"></a></li>
+            <li class="main_image2"><a href=#><img src="images/main_image2.jpg" alt="TEXT"></a></li>
+            <li class="main_image3"><a href=#><img src="images/main_image3.jpg" alt="TEXT"></a></li>
+          </ul>
+      </div>        
+    </section>
+
+    <!-- 1. 새로 나온책 -->
+    <section class="new_book">
+      <h2 class="new_book_title">새로 나온책</h2>
+      <ul>
+        <li class="new1">
+          <a href="#">
+            <img src="images/newbook_1.jpg" alt="">
+            <div class="new_cont">
+              <h3>사막을 지나는 시간</h3>
+              <p>강미 | 문학과 지성사</p>
+              <p class="new_bottom">청소년 소설</p>
+              <p>사막 같은 시간을<br>지나는 우리에게 건내는<br>따뜻한 위로</p>
+            </div>
+          </a>
+        </li>
+
+        <li class="new2">
+          <a href="#">
+            <img src="images/newbook_1-3.jpg" alt="">
+            <div class="new_cont">
+              <h3>은하환담</h3>
+              <p>곽재식 외 8인 | 달다</p>
+              <p class="new_bottom">청소년 소설</p>
+              <p>옛 이야기에 매혹된<br>아홉 이야기꾼이<br>들려주는 이야기</p>
+            </div>
+          </a>
+        </li>
+
+        <li class="new3">
+          <a href="#">
+            <img src="images/period_book2-2.jpg" alt="">
+            <div class="new_cont">
+              <h3>지구 끝의 온실</h3>
+              <p>김초엽 | 자이언트북스</p>
+              <p class="new_bottom">청소년 소설</p>
+              <p>덩굴식물이 뻗어나가는 곳,<br>그 곳에 숨겨진<br>비밀스럽고 기묘한 이야기</p>
+            </div>
+          </a>
+        </li>
+      </ul>
+    </section>
+
+    <!-- 2. 실시간 클릭 -->
+    <section class="click">
+      <h2 class="click_title">실시간 클릭</h2>
+      <ul>
+        <li><a href="#"><img src="images/cont_image1.jpg" alt="TEXT">나의 아저씨<br>대본집 세트</a></li>
+        <li><a href="#"><img src="images/cont_image2.jpg" alt="TEXT">키르케</a></li>
+        <li class="new_last"><a href="#"><img src="images/cont_image3.jpg" alt="TEXT">더 푸드랩 한정판</a></li>
+        <li><a href="#"><img src="images/cont_image1.jpg" alt="TEXT"></a></li>
+        <li class="new_last"><a href="#"><img src="images/cont_image3.jpg" alt="TEXT"></a></li>
+      </ul>
+
+      <ul class="tag">
+        <li><a href="#">#김영하</a></li>
+        <li><a href="#">#오은영</a></li>
+        <li><a href="#">#파친코</a></li>
+        <li><a href="#">#레이 달리오</a></li>
+        <li><a href="#">#굿즈</a></li>
+        <li><a href="#">#한정판</a></li>
+      </ul>
+    </section>
+
+    <!-- 3. 이 광활한 우주점 -->
+    <div class="space_benner">
+      <h2 class="hide">이 광활한 우주점</h2>
+      <a href=""><img src="images/benner_03.png" alt="전국 알라딘 중고매장 상품을 온라인으로 구매할 수 있는 대한민국 최대종수 보유서점 이 광활한 우주점"></a>
+    </div>
+
+    <!-- 4. 베스트셀러 -->
+    <section class="best_book">
+      <h2 class="best_book_title">베스트셀러</h2>
+      <ul>
+        <li><a href="#"><img src="images/cont_image1.jpg" alt="TEXT"></a></li>
+        <li><a href="#"><img src="images/cont_image2.jpg" alt="TEXT"></a></li>
+        <li class="new_last"><a href="#"><img src="images/cont_image3.jpg" alt="TEXT"></a></li>
+      </ul>
+    </section>
+
+    <div class="cont_wrap">
+    <!-- 5. 알라딘 굿즈/사은품 -->
+    <section class="goods">
+      <h2 class="goods_title">알라딘 굿즈/사은품</h2>
+      <ul>
+        <li><a href=""><img src="images/goods_1.jpg" alt=""></a></li>
+        <li><a href=""><img src="images/goods_2.jpg" alt=""></a></li>
+        <li><a href=""><img src="images/goods_3.jpg" alt=""></a></li>
+      </ul>
+    </section>
+
+    <!-- 6. 카드리뷰 -->
+    <section class="card_review">
+      <h2 class="card_review_title">카드리뷰</h2>
+      <ul>
+        <li><img src="images/card1.jpg"></li>
+        <li><img src="images/card2.jpg"></li>
+        <li><img src="images/card3.jpg"></li>
+      </ul>
+    </section>
+    </div>
+
+    <div class="cont_wrap">
+      <section class="sns">
+        <h2 class="sns_title">알라디너TV</h2>
+        <iframe src="https://www.youtube.com/embed/JAxhMmPfbJg" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </section>
+
+      <section class="news">
+        <h2 class="news_title">공지사항</h2>        
+        <ul>
+          <li><a href="#"><span class="list_title">[공지사항] 자주 하는 문의사항에 대해</span> <span class="list_date">2022-07-06</span></a></li>
+          <li><a href="#"><span class="list_title">[이벤트] 7월 신간 구매 이벤트 당첨자 안내</span> <span class="list_date">2022-07-05</span></a></li>
+          <li><a href="#"><span class="list_title">[이벤트] 함께 읽어요! 이벤트 당첨자 안내</span> <span class="list_date">2022-07-02</span></a></li>
+          <li><a href="#"><span class="list_title">[공지사항] 문의(주문, 배송, 반품 등)전 참고해주세요</span> <span class="list_date">2022-07-01</span></a></li>
+        </ul>
+        <a href="#" class="news_more">더보기</a>
+      </section>
+
+    <aside class="top">
+      <a href="#header">맨위로</a>
+    </aside>
+  </main>
+
+  <footer id="footer" class="footer">
+    <h2><a href="#"><img src="images/footer_logo.png" alt="사이트이용안내"></a></h2>
+
+    <div class="info">
+        <h3 class="hide">TITLE</h3>
+        <address>
+          (본사) 서울시 중구 서소문로 89-31
+          (고객센터) 서울시 마포구 백범로 71 숨도빌딩 7층
+        </address>
+        <p class="tel">고객센터 일반문의(발신자 부담) 1544-2514</p>
+        
+        <div class="term">
+          <h3 class="hide">TITLE</h3>
+          <li class="term1"><a href="#">TEXTTEXTTEXT</a></li>
+          <li class="term2"><a href="#">TEXTTEXTTEXTTEXT</a></li>
+          <li><a href="#">TEXTTEXTTEXTTEXTTEXT</a></li>
+        </div>
+        <p>ⓒ Aladin Communication. All Rights Reserved.</p>
+    </div>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>알라딘 회원가입</title>
+  <style type="text/css">
+    /* reset */
+    body, h1, h2, h3, p, form, fieldset, legend, input, label
+    {margin: 0; padding: 0;}
+    body{font-family: "맑은 고딕", "나눔고딕", sans-serif; 
+    font-size: 12px;}
+    input,button{vertical-align: middle; font-size: 14px;}
+    button{cursor: pointer;}
+    a{text-decoration: none;color: inherit;}
+
+    body{background: #f2f2f2; width: 1000px; margin: auto;}
+    fieldset{border:1px solid #ccc; border-radius: 3px; padding: 74px; width: 683px; height: 1635px; margin: 0 auto 72px;}
+    legend{display:none;}
+    label{line-height: 2.3; font-size: 15px; font-weight: bold;}
+    span{padding-left: 5px; font-size: 12px; color: #ee3897; font-weight: bold;}
+    .color{color: #ee3897; font-weight: bold; margin-bottom: 21px;}
+    .p_bottom{margin-bottom: 16px;}
+
+    .fieldset_wrap{width: 500px; margin:auto;}
+    .join_cont{margin-bottom: 84px;}
+    .privacy_check label{margin-right: 45px;}
+
+    input[type=text]{width: 500px; height: 40px; border:1px solid #ccc; margin-bottom: 10px;}
+    input[type=pwd]{width: 500px; height: 40px; border:1px solid #ccc; margin-bottom: 10px;}
+    input[type=checkbox]{width: 19px; height: 19px; line-height: 2.3;}
+
+    h3{font-size: 20px; margin-bottom: 39px;background:url(images/join_h3.png) no-repeat; text-indent: -9999px;}
+    
+    .logo{
+      width: 200px; height: 124px;
+      background:url(images/join_logo.png) no-repeat;
+      text-indent: -9999px;
+      margin:52px auto;
+    }
+
+    .logo a{
+      width: 200px; height: 84px;
+      display: block;
+    }
+
+    /* 아이디 중복확인 */
+    #id{width: 350px; display:block}
+
+    .id_wrap{
+      width: 500px; height: 85px;
+      position: relative;
+    }
+
+    .id_search{
+      border:1px solid #ccc;
+      width: 150px; height: 42px;
+      position: absolute;
+      right: -1px; top:35px;
+      font-size: 14px;
+      font-weight: bold;
+    }
+
+
+    /* 생일, 성별 */
+    .birth_gender{
+      width: 500px; height: 85px;
+      position: relative;
+    }
+
+    #birht{width: 420px; display:block}
+
+    #gender{
+      border:1px solid #ccc;
+      width: 80px; height: 42px;
+      position: absolute;
+      right: -1px; top:34px;
+    }
+
+
+    /* 이메일, 이메일 주소 선택 */
+    #email{width: 270px; display:block}
+
+    .email_wrap{
+      width: 500px; height: 85px;
+      position: relative;
+    }
+
+    #email_sel{
+      border:1px solid #ccc;
+      width: 200px; height: 42px;
+      position: absolute;
+      right: -1px; top:35px;
+      font-size: 14px;
+    }
+
+    .email_wrap>span{color: #444;
+      position: absolute;
+      top:42px;
+      right: 204px;
+      font-size: 18px;
+    }
+
+
+    /* 주소 검색 */
+    #addr{width: 400px; display: block}
+
+    .addr_wrap{
+      width: 500px; height: 245px;
+      position: relative;
+    }
+
+    .addr_search{
+      border:1px solid #ccc;
+      width: 100px; height: 42px;
+      position: absolute;
+      right: -1px; top:35px;
+      font-size: 14px;
+      font-weight: bold;
+    }
+
+    /* 가입하기 버튼 */
+    .submit_wrap button{display:block; margin: 72px auto;}
+    .submit{
+      width: 140px; height: 50px;
+      border:3px solid #000;
+      border-radius: 3px;
+      background:url(images/submit.png) no-repeat center #fff;
+      text-indent: -9999px;
+    }
+
+
+    /* footer 저작권 */
+    .copyright{text-align: center; margin-bottom: 72px;}
+  </style>
+  <script type="text/javascript">
+    function form_check(){
+      var uname = document.getElementById("uname");
+      var uid = document.getElementById("uid");
+      var pwd = document.getElementById("pwd");
+      var repwd = document.getElementById("repwd");
+
+      // id
+      if(uid.value == ""){
+        var txt = document.getElementById("err_id");
+        txt.textContent = ("아이디를 입력하세요.");
+        var r_txt = document.getElementById("id_txt");
+        r_txt.textContent = "";
+        uid.focus();
+        return false;
+      };
+
+      var id_len = uid.value.length;
+      if(id_len < 4 || id_len > 12){
+        var txt = document.getElementById("err_id");
+        txt.textContent = "아이디는 4~12글자만 입력할 수 있습니다.";
+        var r_txt = document.getElementById("id_txt");
+        r_txt.textContent = "";
+        uid.focus();
+        return false;
+      }
+
+      // name
+      if(uname.value == ""){
+        var txt = document.getElementById("err_name");
+        txt.innerHTML = "이름을 입력하세요.";
+        uname.focus();
+        return false;
+      };
+    
+      // pwd
+      if(pwd.value == ""){ 
+        var txt = document.getElementById("err_pwd");
+        txt.textContent = "비밀번호를 입력하세요.";
+        var r_txt = document.getElementById("pwd_txt");
+        r_txt.textContent = "";
+        pwd.focus();
+        return false;
+      }
+
+      var pwd_len = pwd.value.length;
+      if(pwd_len < 4 || pwd_len > 8){
+        var txt = document.getElementById("err_pwd");
+        txt.textContent = "비밀번호는 4~8글자만 입력할 수 있습니다.";
+        var r_txt = document.getElementById("pwd_txt");
+        r_txt.textContent = "";
+        pwd.focus();
+        return false;
+      };
+
+      // repwd
+      if(pwd.value != repwd.value){
+        var txt = document.getElementById("err_repwd");
+        txt.textContent = "비밀번호를 확인해주세요.";
+        repwd.focus();
+        return false;
+      };
+    }
+  </script>
+</head>
+
+<body>
+  <h1 class="logo"><a href="#">알라딘 회원가입</a></h2>
+  <form action="insert.php" name="join_form" method="get" onsubmit="return form_check()">
+    <fieldset>
+      <legend>회원가입</legend>
+      <div class="fieldset_wrap">
+        <h3>정보를 입력해주세요.</h3>
+        <div class="join_cont">
+          <p class="id_wrap">
+            <label for="id">아이디<span>영문 소문자, 숫자를 사용하여 4~12자 이하</span></label>
+            <input type="text" name="id" id="id">
+            <button type="button" class="id_search">아이디 중복확인</button>
+            <span id="err_id" class="err_txt"></span>
+          </p>
+
+          <p>
+            <label for="pwd">비밀번호<span>영문 3가지 이상의 대/소문자, 숫자, 특수문자를 사용하여 8~20자 이하</span></label>
+            <input type="pwd" name="pwd" id="pwd">
+            <span id="err_pwd" class="err_txt"></span>
+          </p>
+
+          <p>
+            <label for="repwd" class="repwd">비밀번호 확인</label>
+            <input type="pwd" name="repwd" id="repwd">
+            <br><span id="err_repwd" class="err_txt"></span>
+          </p>
+        </div>
+
+        <div class="join_cont">
+          <p>
+            <label for="name">이름</label>
+            <input type="text" name="name" id="name">
+            <br><span id="err_name" class="err_txt"></span>
+          </p>
+
+          <div class="birth_gender">
+            <p>
+              <label for="birht" class="">생년월일<span>연, 월, 일 8자리 숫자</span></label>
+              <input type="text" name="birht" id="birht">
+              
+            </p>
+
+            <p>
+              <select name="gender" id="gender">
+                <option>남</option>
+                <option>여</option>
+              </select>
+            </p>
+          </div>
+          
+          <p>
+            <label for="phone">핸드폰 번호<span>" - " 제외 숫자</span></label>
+            <input type="text" name="phone" id="phone">
+          </p>
+
+          <p class="privacy_wrap">
+            <label for="">개인정보 유효기간</label>
+            <p class="p_bottom">설정된 개인정보 유효기간 동안 로그인 등 이용이 없으면 휴면계정으로 전환됩니다.<br>
+            개인정보가 별도 분리 보관, 각종 뉴스레터, 메일, 문자를 수신할 수 없습니다.</p>
+
+            <div class="privacy_check">
+              <input type="checkbox" value="y" name="privacy1" id="privacy1">
+              <label for="privacy1">1년</label>
+              <input type="checkbox" value="y" name="privacy2" id="privacy2">
+              <label for="privacy2">3년</label>
+              <input type="checkbox" value="y" name="privacy3" id="privacy3">
+              <label for="privacy3">5년</label>
+              <input type="checkbox" value="y" name="privacy4" id="privacy4">
+              <label for="privacy4">탈퇴 시까지</label>
+            </div>
+          </p>
+        </div>
+
+        <div class="join_cont">
+          <p class="email_wrap">
+            <label for="email">이메일</label>
+            <input type="text" name="email" id="email">
+            <span>@</span>
+            <select name="email_sel" id="email_sel" class="email_sel">
+              <option>naver.com</option>
+              <option>hanmail.net</option>
+              <option>gmail.com</option>
+            </select>
+          </p>
+
+          <p class="addr_wrap">
+            <label for="addr">주소</label>
+            <input type="text" name="addr" id="addr" class="addr">
+            <button class="addr_search">검색</button><br>
+            <input type="text" name="addr1" id="addr1">
+            <input type="text" name="addr2" id="addr2">
+            <input type="checkbox" value="y" name="agree" id="agree">
+            <label for="agree">주소는 다음에 입력합니다.<br>
+            <p class>(단, 주소가 없으면 경품 이벤트 추첨에서 제외될 수 있습니다.)</p>
+          </p>
+        </div>
+
+        <div class="join_cont"></div>
+          <p>
+            <label for="receive">선택 동의 항목</label>
+            <p class="color">이벤트 적립금, 쿠폰 등의 이벤트 혜택을 전해드립니다.<br>모두 동의시 즉시 사용 적립금 1000원을 드립니다.</p>
+            <input type="checkbox" value="y" name="receive1" id="receive1">
+            <label for="agree">앱 푸시<br></label>
+            <input type="checkbox" value="y" name="receive2" id="receive2">
+            <label for="agree">문자, 카카오톡<br></label>
+            <input type="checkbox" value="y" name="receive3" id="receive3">
+            <label for="agree">메일<br></label>
+            <input type="checkbox" value="y" name="receive4" id="receive4">
+            <label for="agree">관심 분야별 맞춤 뉴스레터 수신<br></label>
+          </p>
+
+          <p class="submit_wrap">
+            <button type="submit" class="submit">가입하기</button>
+          </p>
+        </div>
+      </div>
+    </fieldset>
+  </form>
+  <p class="copyright">ⓒ Aladin Communication. All Rights Reserved.</p>
+</body>
+</html>

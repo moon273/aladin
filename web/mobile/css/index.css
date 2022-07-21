@@ -1,0 +1,172 @@
+html, body{width:100%;height:100%}
+body{font-family:"나눔고딕", "cabin";font-size:14px;}
+body,h1,h2,h3,p,div,ul,li,dl,dt,dd{margin:0;padding:0}
+a{text-decoration:none;color:#000}
+ul,li{list-style:none}
+address{font-style:normal}
+
+.hide{position:absolute;left:-9999px;top:-9999px}
+
+@font-face {
+  font-family:'ONE Mobile';
+  src: url('../font/ONE Mobile Regular.woff') format('woff');
+}
+
+/* header */
+.header{height:73px;border-top:1px solid #fff;margin:auto;box-sizing:border-box;position:relative;z-index:10;background:#fff}
+
+.logo{width:188px;height:63px;background:url(../images/aladin_logo.png) no-repeat top center;background-size:90%;text-indent:-9999px;margin:10px auto}
+.logo a{height:63px;display:block}
+
+/* GNB */
+.gnb{position:absolute;height:100%;background:rgba(0,0,0,0.7);left:0;top:0}
+.gnb > a{display:block;padding:0}
+.gnb h2{width:58px;height:58px;background:url(../images/gnb.png) no-repeat center; background-size: 70%;text-indent:-9999px;position:absolute;left:7px;top:15px;}
+.gnb h2 a{display:block;height:100%}
+.gnb>ul{width:100%;height:100%;position:absolute;left:0;top:83px;display:none;}
+.gnb ul ul{width:100%;display:none;}
+.gnb>ul>li{background:#707070; padding:5px 0; background: #fff;}
+.gnb>ul>li>a{font-size:18px;padding:10px;font-weight:bold}
+.gnb li li{background:#ccc; border-top:1px solid #444; padding-left:10px}
+.gnb li li:last-child{border-bottom:1px solid #444}
+.gnb li li a{font-size:16px;line-height:24px;padding:8px 10px 8px 10px}
+
+.top_menu{width:58px;height:58px;position:absolute;right:10px;top:10px}
+.login a{width:58px;height:58px;background:url(../images/login.png) no-repeat center bottom 5px;background-size: 70%; text-indent:-9999px;display:block;margin-right:10px}
+
+/* content */
+.content h2{font-family:'ONE Mobile'; margin:0px 0px 12px 28px;}
+.content h3{font-size: 17px;}
+
+/* main_image */
+.main_image1 img{width:100%}
+.main_image2 img{width:100%}
+.main_image3 img{width:100%}
+
+/* 1. 새로 나온책 */
+.new_book{max-width: 100%;overflow:hidden; margin-bottom:45px}
+.new_book .bx-wrapper{margin-left:20px;}
+.new_book_title{width:max-content;height:26px;
+display:block}
+.new_book ul li{width: 360px !important; height: 173px; border-radius:20px; background: rgb(230, 230, 230);padding: 20px;}
+.new_book img{width: 120px; border: 1px solid #a7a7a7; box-sizing: border-box;float: left;} 
+.new_book .new_cont{float: left; padding: 10px;}
+.new_bottom{padding-bottom: 20px;}
+
+/* 2. 실시간 클릭 */
+.click{max-width: 100%;overflow:hidden;}
+.click .bx-wrapper{margin-left:20px;}
+.click_title{width:max-content;height:26px;
+display:block;margin:0 auto 28px}
+.click li{width: 226px !important; height: 340px; padding:8px 0}
+.click img{
+  border: 1px solid #ccc;
+box-sizing: border-box; border-radius: 20px; box-shadow: #ccc 2px 2px 6px 1px}
+
+
+.tag{overflow: hidden;}
+.tag li{
+  border:1px solid #444;
+  border-radius: 30px;
+  width: max-content !important;
+  height: max-content;
+  display: inline-block;
+  padding:5px 20px;
+}
+
+/* 3. 이 광활한 우주점 배너*/
+.space_benner{
+  width:96%;
+  margin: 52px auto;
+}
+
+.space_benner img{
+  display: block;
+  width: 96%;
+  margin: 0 auto;
+}
+
+/* 4. 베스트셀러 */
+.best_book{max-width: 100%;overflow:hidden;}
+.best_book .bx-wrapper{margin-left:20px;}
+.best_book_title{width:max-content;height:26px;
+display:block;margin:0 auto 28px}
+.best_book ul{width:96%; display:block;}
+.best_book ul li{width: 226px !important; height: 340px;}
+.best_book img{width: 100%; border: 1px solid #707070;
+box-sizing: border-box; border-radius: 20px;} 
+
+/* 5. 알라딘 굿즈/사은품 */
+.goods{width:49%;overflow:hidden; float: left;margin: 0 2% 30px 0}
+.goods_title{width:max-content;height:26px;display:block;margin:0 auto 28px}
+.goods ul{width:96%; display:block; overflow: hidden;}
+.goods ul li{width:96%; display:block;}
+.goods img{width:100%; box-sizing: border-box; border-radius: 20px;} 
+
+/* 6. 카드리뷰 */
+.card_review{width:49%;overflow:hidden;margin: 0 0% 30px 0; float: left;}
+.card_review_title{width:max-content;height:26px;display:block;
+margin:0 auto 28px}
+.card_review img{width:100%;float:left;box-sizing: border-box; border-radius: 20px;} 
+
+/* 공지사항+알라디너TV */
+.cont_wrap{width:calc(100% - 40px); margin:0 auto;box-sizing:border-box; overflow: hidden;}
+.cont_wrap h2{margin: 10px auto 20px}
+
+/* SNS */
+.sns{width:49%; float:left; box-sizing:border-box; margin: 0 2% 30px 0;}
+.sns_title{width:max-content;height:26px;display:block;margin:0 auto 28px}
+.sns iframe{width:100%; height:100%; border-radius: 20px; border:none} 
+
+/* 공지사항 */
+.news{width:49%;float:left;margin:0 0 30px;box-sizing:border-box;height:180px;position:relative;left:0}
+.news_title{width:max-content;display:block;margin:0 auto 28px}
+.news ul{height: 150px;;border: 1px solid #707070; border-radius: 20px; padding:20px 10px; box-sizing: border-box;}
+.news ul li{font-size:14px;line-height:1.6}  
+.news a{color:#063225;display:block}
+.list_title{width:70%;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;position:relative;left:0;display:inline-block;padding:0 5%;box-sizing:border-box}
+.list_date{width:30%;position:absolute;right:0;display:inline-block;padding-left:3%;box-sizing:border-box}
+.news_more{width:46px;height:12px;background:url(../images/more.jpg) no-repeat;text-indent:-9999px;display:block;position:absolute;right:27px;top:27px}
+
+/* aside */
+.top{margin:auto;position:relative;left:0;}
+.top a{width:40px;height:40px;background:url(../images/top.png) no-repeat; background-size: 40px 40px;text-indent:-9999px;display:block;position:absolute;right:10px;top:-50px}
+
+/* footer */
+.footer{background:#707070; width: 100%; color:#fff; float:left;}
+.footer a{color:#fff;}
+.footer h2 img{width:120px; height: 47px} 
+.footer h2 a{float:left;display:block; width: 120px; height: 47px;margin:20px 10px 0 25px}
+.info{float:left;width:75%;margin:30px 10px;}
+.info p{font-size:14px}
+address{float:left}
+address:after{content:"|";margin:0 10px}
+.tel{float:left}
+.copyright{text-align:left}
+.term li{float:left}
+.term1:after{content:"|";margin:0 10px}
+.term2:after{content:"|";margin:0 10px}
+
+@media screen and (max-width:767px){
+/* cont_wrap */
+
+
+.goods{width:98%; margin: 0 auto 30px;}
+.card_review{width:98%; margin: 0 auto 30px;}
+
+.sns{width:98%; margin: 0 auto 30px}
+.news{width:98%; height: 100%}
+
+/* footer */
+.footer h2{width:120px;margin:0 auto;padding:10px 0}
+.footer h2 a{float:none; margin:20px 0 0}
+.info{float:none;width:100%;padding:0px 10px 20px;box-sizing:border-box;text-align:center}
+.info p{font-size:14px}
+address{float:none}
+address:after{content:"";margin:0}
+.tel{float:none}
+.copyright{text-align:center}
+.term li{float:none}
+.term1:after{content:"";margin:0}
+.term2:after{content:"";margin:0}
+}
